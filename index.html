@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jatuporn Rawengjit</title>
+<meta name="description" content="Jatuporn Rawengjit — Senior Computer Technical Officer, RMUTSB. IT infrastructure, network administration and institutional system development.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+Thai:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f7f5; --card: #ffffff; --text: #1c1c1e; --muted: #5f6368;
+    --line: #e3e3df; --accent: #0b6e4f; --accent-soft: #e3f2ec;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #121314; --card: #1c1d1f; --text: #ececec; --muted: #a0a3a8;
+            --line: #2c2e31; --accent: #4fc79a; --accent-soft: #1d3329; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 16px/1.65 "Inter", "Noto Sans Thai", system-ui, sans-serif;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 72px 20px 48px; }
+  header h1 { font-size: clamp(2rem, 5vw, 2.8rem); line-height: 1.15; margin: 0 0 8px; }
+  .role { color: var(--accent); font-weight: 600; margin: 0 0 20px; }
+  .bio { color: var(--muted); max-width: 640px; margin: 0 0 28px; }
+  .links { display: flex; flex-wrap: wrap; gap: 10px; }
+  .btn {
+    display: inline-block; padding: 9px 16px; border-radius: 8px;
+    border: 1px solid var(--line); background: var(--card);
+    color: var(--text); text-decoration: none; font-weight: 600; font-size: .92rem;
+  }
+  .btn:hover { border-color: var(--accent); color: var(--accent); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .btn.primary:hover { opacity: .9; color: #fff; }
+  h2 { font-size: 1.25rem; margin: 64px 0 20px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+  .card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px; display: flex; flex-direction: column;
+  }
+  .card h3 { margin: 0 0 8px; font-size: 1.08rem; }
+  .card p { margin: 0 0 16px; color: var(--muted); font-size: .94rem; flex: 1; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
+  .tag { background: var(--accent-soft); color: var(--accent); font-size: .78rem;
+         padding: 3px 9px; border-radius: 99px; font-weight: 600; }
+  .private { color: var(--muted); font-size: .85rem; }
+  footer { margin-top: 72px; padding-top: 20px; border-top: 1px solid var(--line);
+           color: var(--muted); font-size: .85rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Jatuporn Rawengjit</h1>
+    <p class="role">Senior Computer Technical Officer</p>
+    <p class="bio">
+      Senior Computer Technical Officer at Rajamangala University of Technology Suvarnabhumi,
+      specializing in IT infrastructure, network administration, and institutional system development.
+    </p>
+    <div class="links">
+      <a class="btn primary" href="mailto:jatuporn.r@rmutsb.ac.th">jatuporn.r@rmutsb.ac.th</a>
+      <a class="btn" href="https://github.com/jatupornrmutsb">GitHub</a>
+    </div>
+  </header>
+
+  <h2>Projects</h2>
+  <div class="grid">
+    <article class="card">
+      <h3>Voice to Multi-AI Router</h3>
+      <p>สั่งงาน AI หลายตัวในเครื่องด้วยเสียงภาษาไทย พูดหรือพิมพ์ในหน้าเว็บเดียว แล้วส่งต่อไปยัง Gemini, Claude Code, VS Code, Cursor ฯลฯ
+        พร้อมดึงคำตอบกลับมาแสดง มีโหมดอัตโนมัติที่เลือกเครื่องมือฟรีก่อน ทำงานเฉพาะในเครื่อง (127.0.0.1) และป้องกันด้วย Token</p>
+      <div class="tags"><span class="tag">Python</span><span class="tag">PowerShell</span><span class="tag">Web Speech API</span><span class="tag">Gemini API</span></div>
+      <div class="links">
+        <a class="btn" href="https://github.com/jatupornrmutsb/voice_to_multi_ai_router">ดูโค้ด</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <h3>Claude Skills</h3>
+      <p>ชุด skill สำหรับ Claude Code เช่น thai-docx สำหรับจัดเอกสาร Word ภาษาไทยและหนังสือราชการ,
+        jdtaia-ieee-document สำหรับบทความวิจัยแบบอ้างอิง IEEE และ ipof-moscow-7layer สำหรับการวิเคราะห์ข้อกำหนดระบบ</p>
+      <div class="tags"><span class="tag">Claude Code</span><span class="tag">JavaScript</span><span class="tag">Python</span><span class="tag">PowerShell</span></div>
+      <span class="private">🔒 Private repository</span>
+    </article>
+  </div>
+
+  <footer>© 2026 Jatuporn Rawengjit · Hosted on GitHub Pages</footer>
+</div>
+</body>
+</html>
