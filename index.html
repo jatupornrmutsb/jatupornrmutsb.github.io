@@ -47,6 +47,8 @@
          padding: 3px 9px; border-radius: 99px; font-weight: 600; }
   .private { color: var(--muted); font-size: .85rem; }
   .card.game { margin-bottom: 18px; }
+  .card p.credit { font-size: .82rem; margin: -8px 0 14px; flex: 0; }
+  .credit a { color: var(--accent); }
   .stage { position: relative; aspect-ratio: 16 / 9; max-width: 100%; margin-bottom: 16px;
            border-radius: 10px; overflow: hidden; background: #0b0d1a; }
   .stage iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
@@ -82,6 +84,7 @@
     <h3>🎮 Space Platformer (2D Game)</h3>
     <p>เกมแอ็กชัน 2D Platformer ธีมอวกาศ พัฒนาด้วย Unity 2D (URP) เล่นบนหน้าเว็บได้ทันที
       ควบคุมด้วยปุ่ม A / D เพื่อเดิน และ Spacebar เพื่อกระโดด</p>
+    <p class="credit">ต่อยอดจาก <a href="https://github.com/striderzz/2D-Platformer-Unity">striderzz/2D-Platformer-Unity</a> (MIT License, © 2023 Hasan)</p>
     <div class="tags"><span class="tag">Unity 2D</span><span class="tag">C#</span><span class="tag">WebGL</span><span class="tag">URP Lights</span></div>
     <div class="stage" id="game-stage">
       <button class="play" id="play-btn" type="button">
