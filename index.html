@@ -46,6 +46,19 @@
   .tag { background: var(--accent-soft); color: var(--accent); font-size: .78rem;
          padding: 3px 9px; border-radius: 99px; font-weight: 600; }
   .private { color: var(--muted); font-size: .85rem; }
+  .card.game { margin-bottom: 18px; }
+  .stage { position: relative; aspect-ratio: 16 / 9; max-width: 100%; margin-bottom: 16px;
+           border-radius: 10px; overflow: hidden; background: #0b0d1a; }
+  .stage iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .play { all: unset; cursor: pointer; position: absolute; inset: 0; display: block; }
+  .play img { width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(.6); }
+  .play span { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+               background: var(--accent); color: #fff; font-weight: 700; padding: 12px 20px;
+               border-radius: 99px; white-space: nowrap; font-size: .95rem; }
+  .play span small { font-weight: 400; opacity: .85; }
+  .play:hover img { filter: brightness(.75); }
+  button.btn { font: inherit; font-weight: 600; font-size: .92rem; cursor: pointer; }
+  button.btn:disabled { opacity: .5; cursor: default; }
   footer { margin-top: 72px; padding-top: 20px; border-top: 1px solid var(--line);
            color: var(--muted); font-size: .85rem; }
 </style>
@@ -66,6 +79,24 @@
   </header>
 
   <h2>Projects</h2>
+  <article class="card game">
+    <h3>🎮 Space Platformer (2D Game)</h3>
+    <p>เกมแอ็กชัน 2D Platformer ธีมอวกาศ พัฒนาด้วย Unity 2D (URP) เล่นบนหน้าเว็บได้ทันที
+      ควบคุมด้วยปุ่ม A / D เพื่อเดิน และ Spacebar เพื่อกระโดด</p>
+    <div class="tags"><span class="tag">Unity 2D</span><span class="tag">C#</span><span class="tag">WebGL</span><span class="tag">URP Lights</span></div>
+    <div class="stage" id="game-stage">
+      <button class="play" id="play-btn" type="button">
+        <img src="game/poster.jpg" alt="ภาพตัวอย่างเกม Space Platformer">
+        <span>▶ คลิกเพื่อเริ่มเล่นบนหน้านี้ <small>(ประมาณ 45 MB)</small></span>
+      </button>
+    </div>
+    <div class="links">
+      <button class="btn" id="fs-btn" type="button" disabled>⛶ ขยายเต็มจอ</button>
+      <a class="btn" href="https://github.com/jatupornrmutsb/jatupornrmutsb.github.io/releases/download/game-v1.0/RobloxSpacePlatformer_PC_Setup.zip">💻 โหลดตัว PC</a>
+      <a class="btn" href="https://github.com/jatupornrmutsb/jatupornrmutsb.github.io/releases/download/game-v1.0/RobloxSpacePlatformer.apk">📱 โหลด Android</a>
+    </div>
+  </article>
+
   <div class="grid">
     <article class="card">
       <h3>Voice to Multi-AI Router</h3>
@@ -88,5 +119,23 @@
 
   <footer>© 2026 Jatuporn Rawengjit · Hosted on GitHub Pages</footer>
 </div>
+<script>
+  // Load the ~45 MB game only when the visitor asks for it
+  var stage = document.getElementById("game-stage");
+  var fsBtn = document.getElementById("fs-btn");
+  document.getElementById("play-btn").addEventListener("click", function () {
+    var frame = document.createElement("iframe");
+    frame.src = "game/";
+    frame.title = "Space Platformer";
+    frame.allow = "fullscreen; autoplay";
+    stage.replaceChildren(frame);
+    frame.addEventListener("load", function () { frame.focus(); });
+    fsBtn.disabled = false;
+  });
+  fsBtn.addEventListener("click", function () {
+    if (stage.requestFullscreen) stage.requestFullscreen();
+    else if (stage.webkitRequestFullscreen) stage.webkitRequestFullscreen();
+  });
+</script>
 </body>
 </html>
